@@ -1,0 +1,13 @@
+package kg.megalab.employmentproject;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class EmploymentProjectApplicationTests {
+
+    @Test
+    void contextLoads() {
+    }
+
+}
