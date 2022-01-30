@@ -21,6 +21,6 @@ public class Position extends AbstractPersistable<Long> {
     @Column(name = "position_title", nullable = false)
     String positionTitle;
 
-    @Column(name = "is_active", columnDefinition = "BOOLEAN DEFAULT TRUE")
+    @Column(name = "is_active", columnDefinition = "BOOLEAN DEFAULT TRUE ")
     Boolean isActive;
 }

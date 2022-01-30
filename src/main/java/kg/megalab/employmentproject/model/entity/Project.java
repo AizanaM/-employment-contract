@@ -3,12 +3,15 @@ package kg.megalab.employmentproject.model.entity;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.springframework.data.jpa.domain.AbstractPersistable;
+import sun.awt.image.ImageWatched;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.util.Date;
-import java.util.Set;
+import java.util.List;
+
 
 @Data
 @Entity
@@ -18,7 +21,7 @@ import java.util.Set;
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @EqualsAndHashCode(callSuper = true)
-public class Projects extends AbstractPersistable<Long> {
+public class Project extends AbstractPersistable<Long> {
 
 
     @Column(name = "project_name", nullable = false)
@@ -31,5 +34,8 @@ public class Projects extends AbstractPersistable<Long> {
     Date endDate;
 
     @OneToMany(mappedBy = "project")
-    Set<EmployeesInProjects> employeesInProjects;
+    List<EmployeesInProjects> employeesInProjects;
+
+    @Column(name = "is_active", columnDefinition = "BOOLEAN DEFAULT TRUE")
+    Boolean isActive;
 }

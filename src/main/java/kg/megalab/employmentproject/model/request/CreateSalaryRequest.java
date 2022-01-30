@@ -1,9 +1,8 @@
-package kg.megalab.employmentproject.model.dto;
+package kg.megalab.employmentproject.model.request;
 
-
-import kg.megalab.employmentproject.model.entity.Employee;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -12,11 +11,10 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class SalaryDto {
+public class CreateSalaryRequest {
 
-    Long id;
-    Employee employee;
     BigDecimal amount;
+    Long employeeId;
     LocalDate startDate;
     LocalDate endDate;
     Boolean isActive;

@@ -22,7 +22,7 @@ public class EmployeesInProjects extends AbstractPersistable<Long> {
 
     @ManyToOne
     @JoinColumn(name = "project_id", nullable = false)
-    Projects project;
+    Project project;
 
     @Column(name = "days_in_project")
     Integer daysInProject;

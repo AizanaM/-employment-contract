@@ -1,5 +1,4 @@
-package kg.megalab.employmentproject.model.dto;
-
+package kg.megalab.employmentproject.model.request;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -10,16 +9,14 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class EmployeeDto {
+public class CreateEmployeeRequest {
 
-    Long id;
     String firstName;
     String lastName;
     String patronymic;
-    PositionDto position;
-    CharacteristicsDto characteristics;
-    AddressDto address;
-    Boolean isActive;
+    Long positionId;
+    Long characteristicsId;
+    Long addressId;
 
 
 }

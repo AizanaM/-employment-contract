@@ -1,4 +1,4 @@
-package kg.megalab.employmentproject.model.dto;
+package kg.megalab.employmentproject.model.request;
 
 
 import lombok.*;
@@ -11,9 +11,8 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class CharacteristicsDto {
-    Long id;
+public class CreateCharacteristicsRequest {
+
     List<String> hardSkills;
     List<String> softSkills;
-
 }

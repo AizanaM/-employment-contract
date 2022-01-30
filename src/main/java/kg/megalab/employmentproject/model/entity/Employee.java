@@ -4,8 +4,7 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 import javax.persistence.*;
-import java.util.Set;
-import java.util.stream.Collector;
+
 
 @Data
 @Entity
@@ -33,8 +32,6 @@ public class Employee extends AbstractPersistable<Long> {
     @JoinColumn(name = "position_id", referencedColumnName = "id")
     Position position;
 
-    @OneToMany(mappedBy = "employee")
-    Set<EmployeesInProjects> employeesInProjects;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id", referencedColumnName = "id", nullable = false)
@@ -43,6 +40,7 @@ public class Employee extends AbstractPersistable<Long> {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "characteristics_id", referencedColumnName = "id")
     Characteristics characteristics;
+
 
 }
 

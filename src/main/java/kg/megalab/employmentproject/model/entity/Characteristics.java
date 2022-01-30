@@ -5,6 +5,7 @@ import lombok.experimental.FieldDefaults;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Data
@@ -12,15 +13,17 @@ import javax.persistence.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "tb_characteristic")
+@Table(name = "tb_characteristics")
 @EqualsAndHashCode(callSuper = true)
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Characteristics extends AbstractPersistable<Long> {
 
+    @ElementCollection
     @Column(name = "hard_skills", nullable = false)
-    String hardSkills;
+    List<String> hardSkills;
 
+    @ElementCollection
     @Column(name = "soft_skills", nullable = false)
-    String softSkills;
+    List<String> softSkills;
 
 }
